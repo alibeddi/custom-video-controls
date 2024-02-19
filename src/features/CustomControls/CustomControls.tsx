@@ -2,8 +2,12 @@
 
 import React, { forwardRef, useEffect, useRef } from 'react';
 
+import FullScreen from './components/FullScreen/FullScreen';
 import Image from 'next/image';
-import Play from './components/Pause/Play';
+import Play from './components/Play/Play';
+import ProgressLine from './components/ProressLine/ProgressLine';
+import SoundControl from './components/SoundControl/SoundControl';
+import Timer from './components/Timer/Timer';
 
 interface VideoControlsProps {
     wrapper: React.RefObject<HTMLDivElement>;
@@ -123,48 +127,15 @@ const CustomControls: React.FC<VideoControlsProps> = forwardRef(({
                     </div>
                 </div>
                 <div className='w-[8rem] flex justify-center items-center gap-2 max-[550px]:hidden'>
-                    <input
-                        type="range"
-                        min="0"
-                        max="100"
-                        value={volume}
-                        className='volume bg-black w-[100px] h-[20px] z-10 cursor-pointer'
-                        onChange={handleVolumeChange}
-                        dir='ltr'
-                    />
-                    <div className=' z-10 cursor-pointer' onClick={() => {
-                        if (muted)
-                            return player.current?.internalPlayer?.unMute().then(() => setMute(false))
-                        player.current?.internalPlayer?.mute().then(() => setMute(true))
-                    }}>
-                        {muted ? <Image src="/icons/Mute_Icon.svg" alt='mute' width={22} height={22} className='relative top[-2px] cursor-pointer' /> : <Image src="/icons/volume.svg" width={20} height={21} alt='volume' />}
-                    </div>
+                    <SoundControl volume={volume} muted={muted} setMute={setMute} handleVolumeChange={handleVolumeChange} player={player} />
                 </div>
                 <div className='w-[10rem] flex justify-between items-center max-[450px]:justify-center gap-1'>
 
-                    <div
-                        className=' cursor-pointer'
-                        onClick={() => {
-                            const iframe = wrapper.current?.querySelector("iframe");
-                            if (iframe)
-                                iframe.requestFullscreen()
-                        }}>
-                        <Image src="/icons/fullscreen.svg" width={30} height={21} alt='play' />
-                    </div>
-                    <div className='right-[12%] top-[45%] max-[450px]:text-[0.8rem]'>
-                        {`${Math.floor(duration / 60)}:${Math.floor(duration % 60) < 10 ? '0' + Math.floor(duration % 60) : Math.floor(duration % 60)} / 
-            ${(Math.floor(progress.playedSeconds / 60)).toString().padStart(2, '0')}:${(Math.floor(progress.playedSeconds % 60)).toString().padStart(2, '0')} `}
-                    </div>
+                    <FullScreen wrapper={wrapper} />
+                    <Timer progress={progress} />
                 </div>
             </div>
-            <div className='h-[5px] bg-[#FEAF3B]  w-[100%] ' ref={road} dir='ltr'>
-                <div className='h-[5px] bg-[#FEAF3B] flex justify-end items-center'
-                    ref={prog}
-                    style={{ width: `${progress.playedSeconds / duration * 100}%` }}
-                >
-                    <div className='bg-[#E68900] h-[13px] rounded-full cursor-pointer px-[6.5px] translate-x-1' ref={reseizer}></div>
-                </div>
-            </div>
+            <ProgressLine road={road} reseizer={reseizer} progress={progress} prog={prog} />
 
         </div>
     )
