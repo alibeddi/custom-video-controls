@@ -1,9 +1,6 @@
 import Image from 'next/image';
 import React from 'react'
-
-interface FullScreen {
-    wrapper: React.RefObject<HTMLDivElement>;
-}
+import FullScreen from '../../layouts/FullScreen';
 
 export default function FullScreen({ wrapper }: FullScreen) {
     return (

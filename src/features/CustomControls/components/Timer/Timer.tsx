@@ -1,11 +1,6 @@
 import React from 'react'
+import Timer from '../../layouts/Timer';
 
-interface Timer {
-    progress: {
-        duration: number;
-        playedSeconds: number;
-    };
-}
 export default function Timer({ progress }: Timer) {
     const duration = progress.duration;
     return (

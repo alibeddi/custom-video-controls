@@ -1,12 +1,7 @@
 import Image from 'next/image';
 import React from 'react'
-interface Play {
-    playing: boolean;
-    setPlaying: React.Dispatch<React.SetStateAction<boolean>>;
-    player: React.RefObject<any>;
-    showEndScreen: boolean;
-    handleReplayClick: any;
-}
+import Play from '../../layouts/Play';
+
 export default function Play({ player, playing, setPlaying, showEndScreen, handleReplayClick }: Play) {
     return (
         <div className='cursor-pointer' onClick={() => {

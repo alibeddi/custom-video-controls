@@ -8,23 +8,8 @@ import Play from './components/Play/Play';
 import ProgressLine from './components/ProressLine/ProgressLine';
 import SoundControl from './components/SoundControl/SoundControl';
 import Timer from './components/Timer/Timer';
+import VideoControlsProps from './layouts/CustomControls';
 
-interface VideoControlsProps {
-    wrapper: React.RefObject<HTMLDivElement>;
-    player: React.RefObject<any>;
-    progress: {
-        duration: number;
-        playedSeconds: number;
-    };
-    playing: boolean;
-    setPlaying: React.Dispatch<React.SetStateAction<boolean>>;
-    muted: boolean;
-    setMute: React.Dispatch<React.SetStateAction<boolean>>;
-    setVolume: React.Dispatch<React.SetStateAction<number>>;
-    volume: number;
-    showEndScreen: boolean;
-    handleReplayClick: any
-}
 const CustomControls: React.FC<VideoControlsProps> = forwardRef(({
     wrapper,
     player,

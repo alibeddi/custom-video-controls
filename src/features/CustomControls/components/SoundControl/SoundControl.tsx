@@ -1,13 +1,7 @@
 import Image from 'next/image'
 import React from 'react'
+import SoundControl from '../../layouts/SoundControl'
 
-interface SoundControl {
-    handleVolumeChange: (e: React.ChangeEvent<HTMLInputElement>) => void
-    player: React.RefObject<any>;
-    muted: boolean;
-    setMute: React.Dispatch<React.SetStateAction<boolean>>;
-    volume: number;
-}
 export default function SoundControl({ volume, handleVolumeChange, muted, player, setMute }: SoundControl) {
     return (
         <>

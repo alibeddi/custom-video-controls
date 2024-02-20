@@ -1,5 +1,3 @@
-'use client'
-
 import CustomControls from "@/features/CustomControls/CustomControls";
 
 export default function Home() {
