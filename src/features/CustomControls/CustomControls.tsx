@@ -8,7 +8,7 @@ import Play from './components/Play/Play';
 import ProgressLine from './components/ProressLine/ProgressLine';
 import SoundControl from './components/SoundControl/SoundControl';
 import Timer from './components/Timer/Timer';
-import VideoControlsProps from './layouts/CustomControls';
+import VideoControlsProps from './types/CustomControls';
 
 const CustomControls: React.FC<VideoControlsProps> = forwardRef(({
     wrapper,
