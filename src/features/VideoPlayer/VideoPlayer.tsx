@@ -4,11 +4,11 @@ import React, { useRef, useState } from 'react';
 
 import ClientOnly from '@/hooks/ClientOnly';
 import Image from 'next/image';
-import PlayIcon from './svgComponents/PlayIcon';
+import PlayIcon from './components/svgComponents/PlayIcon';
 import ReactPlayer from 'react-player/youtube';
 import Replay from '@icons/replay.svg'
 import { Spin } from 'antd';
-import VideoControls from './VideoControls';
+import VideoControls from '../CustomControls/CustomControls';
 import { twMerge } from 'tailwind-merge';
 
 type VideoContainerProps = {

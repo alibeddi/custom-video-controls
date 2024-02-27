@@ -11,10 +11,12 @@
   "dependencies": {
     "@tanstack/react-query": "^5.17.19",
     "@tanstack/react-query-devtools": "^5.17.21",
+    "antd": "^5.14.2",
     "next": "14.1.0",
     "next-intl": "^3.4.5",
     "react": "^18",
     "react-dom": "^18",
+    "react-player": "^2.14.1",
     "tailwind-merge": "^2.2.0"
   },
   "devDependencies": {
