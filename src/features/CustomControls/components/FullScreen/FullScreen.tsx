@@ -1,6 +1,6 @@
 import Image from 'next/image';
 import React from 'react'
-import FullScreen from '../../layouts/FullScreen';
+import FullScreen from '../../types/FullScreen';
 
 export default function FullScreen({ wrapper }: FullScreen) {
     return (

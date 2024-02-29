@@ -1,5 +1,5 @@
 import React from 'react'
-import ProgressLine from '../../layouts/ProgressLine'
+import ProgressLine from '../../types/ProgressLine'
 
 export default function ProgressLine({
     road,

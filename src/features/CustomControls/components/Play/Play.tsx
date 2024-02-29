@@ -1,6 +1,6 @@
 import Image from 'next/image';
 import React from 'react'
-import Play from '../../layouts/Play';
+import Play from '../../types/Play';
 
 export default function Play({ player, playing, setPlaying, showEndScreen, handleReplayClick }: Play) {
     return (
