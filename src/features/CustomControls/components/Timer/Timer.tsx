@@ -1,5 +1,5 @@
 import React from 'react'
-import Timer from '../../layouts/Timer';
+import Timer from '../../types/Timer';
 
 export default function Timer({ progress }: Timer) {
     const duration = progress.duration;
