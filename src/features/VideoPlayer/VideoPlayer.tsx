@@ -72,7 +72,7 @@ const VideoContainer: React.FC<VideoContainerProps> = ({ video, styles, wrapperC
                             :
                             <ReactPlayer
                                 playIcon={<PlayIcon setPlaying={setPlaying} />}
-                                url={`${video}?modestbranding=1`}
+                                url={video}
                                 related={false}
                                 // light={ thumbnail && <Image src={ thumbnail || "" } fill={ true } alt='thumbnail image' className='object-cover ' onClick={ () => setPlaying( true ) } /> }
                                 playing={playing}
