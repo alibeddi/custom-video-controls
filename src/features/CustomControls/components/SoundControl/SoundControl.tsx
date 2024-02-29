@@ -1,6 +1,6 @@
 import Image from 'next/image'
 import React from 'react'
-import SoundControl from '../../layouts/SoundControl'
+import SoundControl from '../../types/SoundControl'
 
 export default function SoundControl({ volume, handleVolumeChange, muted, player, setMute }: SoundControl) {
     return (
